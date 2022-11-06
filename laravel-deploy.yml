@@ -20,7 +20,7 @@
 
     - name: Git pull Laravel Code
       ansible.builtin.git:
-        repo: https://github.com/bahit/laravel.git
+        repo: "{{ github_repo }}"
         dest: "{{ remote_www_root }}/{{ app_root_dir }}"
         single_branch: yes
         version: 9.x

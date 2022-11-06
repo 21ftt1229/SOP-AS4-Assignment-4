@@ -14,6 +14,9 @@ remote_www_root: /var/www
 app_root_dir: sysops
 document_root: "{{ remote_www_root }}/{{ app_root_dir }}/public"
 
+# GitHub repo containing Laravel
+github_repo: "https://github.com/bahit/laravel.git"
+
 # Laravel Env Variables
 app_name: sysops
 app_env: dev
