@@ -28,16 +28,17 @@
     - name: take ownership of laravel folder
       file:
         path: "{{ remote_www_root }}/{{ app_root_dir }}"
-        owner: "www-data"
-        group: "www-data"
+        owner: "{{ remote_user }}"
+        group: "{{ remote_user }}"
       become: yes
     
     - name: set permissions for Laravel storage folder
       file:
         path: "{{ remote_www_root }}/{{ app_root_dir }}/storage/"
         state: directory
+        owner: "www-data"
+        group: "www-data"
         recurse: yes
-        mode: '0755'
       become: yes
 
     - name: Set up .env file
