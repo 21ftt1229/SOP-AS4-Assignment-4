@@ -25,11 +25,11 @@
         single_branch: yes
         version: 10.x
         
-    - name: take ownership of myapp folder
+    - name: take ownership of laravel folder
       file:
-        path: /var/www/myapp
-        owner: "{{ ansible_effective_user_id }}"
-        group: "{{ ansible_effective_group_id }}"
+        path: "{{ remote_www_root }}/{{ app_root_dir }}"
+        owner: "www-data"
+        group: "www-data"
       become: yes
     
     - name: set permissions for Laravel storage folder
